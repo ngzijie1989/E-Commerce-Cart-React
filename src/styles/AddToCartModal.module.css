@@ -69,3 +69,25 @@
 	display: inline-block;
 	padding-left: 10px;
 }
+
+.imageContainer{
+	position: relative;
+}
+
+.leftArrow{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	background-color:#EADBC8;
+	padding: 7px;
+	border-radius: 50%
+}
+
+.rightArrow{
+	position: absolute;
+	top: 50%;
+	right: 0;
+	background-color: #EADBC8;
+	padding: 7px;
+	border-radius: 50%
+}

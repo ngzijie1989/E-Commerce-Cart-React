@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/AddToCartModal.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faTimes, faMinus, faPlus, faLeftLong, faRightLong } from '@fortawesome/free-solid-svg-icons'
 import toast from 'react-hot-toast'
 import Button from './Button'
 
@@ -9,6 +9,7 @@ function AddtoCartModal({ modal, setModal, item }) {
   const [ Quantity, setQuantity ] = useState(1)
   const [ stock, setStock ] = useState(item.stock)
   const [ totalPrice, setTotalPrice ] = useState(item.price)
+  const [ itemIndex, setItemIndex ] = useState(0)
 
 
   const handleCancel = () => setModal(false)
@@ -27,8 +28,11 @@ function AddtoCartModal({ modal, setModal, item }) {
     console.log(Quantity)
     //dispatch to reducer to add item to cart (id, quantity, totalPrice, title)
     setModal(false)
+    // cause a shake in the cart
     toast.success(`A total of ${Quantity} of this item has been added to your cart`)
   }
+
+
 
   return (
     modal && (
@@ -46,7 +50,15 @@ function AddtoCartModal({ modal, setModal, item }) {
           <div className={styles.title}>
           <h3>Add item to Cart</h3>
           </div>
-          <img className={styles.image} src={item.thumbnail} alt={item.title}/>
+          <div className={styles.imageContainer}>
+            <img className={styles.image} src={item.images[itemIndex]} alt={item.title}/>
+            <div className={styles.leftArrow}>
+              <FontAwesomeIcon icon={faLeftLong} />
+            </div>
+            <div className={styles.rightArrow}>
+              <FontAwesomeIcon icon={faRightLong} />
+            </div>
+          </div>
 
           <div className={styles.modalContent}>
             <span>Stock available: {stock}</span>

@@ -1,0 +1,37 @@
+.imageThumbnail{
+  width: 100%;
+  background-position: cover;
+  height: 250px;
+}
+
+.card {
+  border: 0.5px solid grey;
+  padding: 10px;
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gridContainer{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+
+}
+
+.AddtoCartButton{
+  background-color: rgb(236, 238, 71);
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.AddtoCartButton:hover{
+  cursor: pointer;
+}

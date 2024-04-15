@@ -5,8 +5,13 @@
   background-color: bisque;
 }
 
-.cartIcon {
+.cartIcons {
   display: flex;
   align-items: center;
   font-size: 20px;
+  padding: 20px;
+}
+
+.cartIcon{
+  padding: 10px;
 }

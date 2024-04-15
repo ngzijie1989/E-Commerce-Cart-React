@@ -8,7 +8,6 @@ function InventoryCard({ item }) {
 
   const handleClick = () => {
     setModal(true)
-    console.log(modal)
   }
 
   return (

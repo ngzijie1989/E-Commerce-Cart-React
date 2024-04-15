@@ -17,7 +17,6 @@ function Inventory() {
       .then((response)=> response.json())
       .then((data) => {
         setInventory(data.products)
-        console.log(Inventory)
       })
   }
 

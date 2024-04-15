@@ -22,6 +22,7 @@
 	position: relative;
   border: 1px solid black;
 	position: relative;
+	max-height: 90%;
 }
 
 .closeButton{
@@ -34,6 +35,8 @@
 
 .image{
 	width: 100%;
+	height: 450px;
+	object-fit: cover;
 }
 
 .modalContent{
@@ -77,17 +80,19 @@
 .leftArrow{
 	position: absolute;
 	top: 50%;
-	left: 0;
+	left: 5px;
 	background-color:#EADBC8;
 	padding: 7px;
-	border-radius: 50%
+	border-radius: 50%;
+	cursor: pointer;
 }
 
 .rightArrow{
 	position: absolute;
 	top: 50%;
-	right: 0;
+	right: 5px;
 	background-color: #EADBC8;
 	padding: 7px;
-	border-radius: 50%
+	border-radius: 50%;
+	cursor: pointer;
 }

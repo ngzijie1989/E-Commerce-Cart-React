@@ -1,0 +1,47 @@
+.orderContainer{
+  text-align: left;
+  padding: 10px; 
+  border: 1px solid grey;
+  margin-bottom: 10px;
+  line-height: 0.5rem;
+  display: flex;
+  font-size: 0.8rem;
+  height: 150px;
+  justify-content: space-between;
+}
+
+.ordersContainer{
+  width: 70%;
+  margin: 20px auto;
+}
+
+.image{
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  padding: 0 10px 0 0;
+}
+
+.orderInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.imageContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageInfo{
+  display: flex;
+}
+
+.totalPrice{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 1.5rem;
+}

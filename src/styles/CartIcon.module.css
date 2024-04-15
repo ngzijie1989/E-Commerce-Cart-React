@@ -4,11 +4,12 @@
   border-radius: 50%;
   font-size: 0.7rem;
   color: white;
-  padding: 3px;
+  padding: 1px 5px 1px 5px;
   top: -7px;
   right: -5px;
 }
 
 .iconContainer{
   position: relative;
+  color: black;
 }

@@ -8,6 +8,8 @@ import CartList from './CartList';
 import Inventory from './Inventory';
 import { Outlet } from 'react-router-dom';
 import ConfirmedOrders from './ConfirmedOrders';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 
 function AppHeader() {
   return (
@@ -17,6 +19,13 @@ function AppHeader() {
           <h1>Welcome to Koko Mart</h1>
         </div>
         <div className={styles.cartIcons}>
+
+          <div className={styles.cartIcon}>
+            <div className={styles.iconContainer}>
+              <FontAwesomeIcon icon={faGlobe} />
+            </div>
+          </div>
+
           <div className={styles.cartIcon}>
             <Link to="/" element={ < Inventory/>}>
               <HomeButton /> 

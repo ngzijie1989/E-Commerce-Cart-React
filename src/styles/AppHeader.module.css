@@ -14,4 +14,10 @@
 
 .cartIcon{
   padding: 10px;
+  color: black;
+}
+
+.iconContainer{
+  color: black;
+  cursor: pointer;
 }

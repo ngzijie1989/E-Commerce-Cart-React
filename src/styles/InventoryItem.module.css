@@ -35,3 +35,13 @@
 .AddtoCartButton:hover{
   cursor: pointer;
 }
+
+.category{
+  padding: 10px 40px 10px 40px;
+  text-align: end;
+}
+
+.categoryTitle{
+  font-weight: bold;
+  line-height: 0;
+}

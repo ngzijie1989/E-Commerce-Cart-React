@@ -8,6 +8,7 @@ import { addCart } from '../slices/cartSlice'
 import { useDispatch } from 'react-redux'
 import { v4 as uuid } from 'uuid';
 import IndexButton from './IndexButton'
+import { useSelector } from 'react-redux'
 
 function AddtoCartModal({ modal, setModal, item }) {
   const [ Quantity, setQuantity ] = useState(1)
@@ -16,6 +17,11 @@ function AddtoCartModal({ modal, setModal, item }) {
   const [ itemIndex, setItemIndex ] = useState(0)
 
   const dispatch = useDispatch();
+
+  const currencyString = useSelector((state) => state.currencyFilter.currencyFilter)
+  const currency = JSON.parse(currencyString)
+  const currencyType = currency.currency
+  const currencyMultiplier = currency.multiplier
 
   const handleCancel = () => setModal(false)
   const handleIncrement = () => { if (stock > 0  ) {setQuantity((prev) => {const newQuantity = prev + 1; setTotalPrice(newQuantity * item.price); return newQuantity}); setStock((prevS) => prevS - 1)} 
@@ -90,7 +96,7 @@ function AddtoCartModal({ modal, setModal, item }) {
           <div className={styles.modalContent}>
             <span>Item: {item.title}</span>
             <span>Stock available: {stock}</span>
-            <span>Price: ${item.price}</span>
+            <span>Price: {currencyType} ${(item.price*currencyMultiplier).toFixed(2)}</span>
             <span>Quantity:
 
               <div className={styles.inline}>
@@ -114,7 +120,7 @@ function AddtoCartModal({ modal, setModal, item }) {
               </div>
                 
             </span>
-            <span>Total Price: ${totalPrice}</span>
+            <span>Total Price: {currencyType} ${(totalPrice*currencyMultiplier).toFixed(2)}</span>
           </div>
 
           <div onClick={handleSubmit}

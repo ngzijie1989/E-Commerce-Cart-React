@@ -4,7 +4,7 @@ import IndexButton from './IndexButton';
 import toast from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash} from '@fortawesome/free-solid-svg-icons'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteCart } from '../slices/cartSlice';
 
 function CartOrder({ order, cartTotalPrice, setCartTotalPrice }) {
@@ -14,6 +14,11 @@ function CartOrder({ order, cartTotalPrice, setCartTotalPrice }) {
   const [ stock, setStock ] = useState()
 
   const dispatch = useDispatch();
+
+  const currencyString = useSelector((state) => state.currencyFilter.currencyFilter)
+  const currency = JSON.parse(currencyString)
+  const currencyType = currency.currency
+  const currencyMultiplier = currency.multiplier
 
   const API_URL = 'https://dummyjson.com/products'
 
@@ -75,7 +80,7 @@ function CartOrder({ order, cartTotalPrice, setCartTotalPrice }) {
           <div className={styles.orderInfo}>
             <p><strong>Order: #{order.id}</strong></p>
             <p>Item: {order.item}</p>
-            <p>Unit Price: ${order.price}</p>
+            <p>Unit Price: {currencyType} ${(order.price*currencyMultiplier).toFixed(2)}</p>
             <p>Quantity: {Quantity}</p>
           </div>
         </div>
@@ -112,7 +117,7 @@ function CartOrder({ order, cartTotalPrice, setCartTotalPrice }) {
 
 
         <div className={styles.totalPrice}>
-        <p><strong>${totalPrice}</strong></p>
+        <p><strong>{currencyType} ${(order.price*Quantity*currencyMultiplier).toFixed(2)}</strong></p>
         </div>
       </div>
   )

@@ -10,6 +10,10 @@ function InventoryCard({ item }) {
 
   const CartList = useSelector((state) => state.cart.cart)
   const findOrder = CartList.find((order)=> order.item === item.title)
+  const currencyString = useSelector((state) => state.currencyFilter.currencyFilter)
+  const currency = JSON.parse(currencyString)
+  const currencyType = currency.currency
+  const currencyMultiplier = currency.multiplier
 
   const handleClick = () => {
     if (findOrder) {
@@ -25,7 +29,7 @@ function InventoryCard({ item }) {
         <img className={styles.imageThumbnail} src={item.thumbnail} alt={item.title}/>
         <div>
           <p>{item.title}</p>
-          <p>$ {item.price}</p>
+          <p> {currencyType} $ {(item.price*currencyMultiplier).toFixed(2)}</p>
           <div onClick={handleClick}
                 onKeyDown={handleClick}
                 tabIndex={0}

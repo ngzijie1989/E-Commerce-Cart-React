@@ -11,19 +11,23 @@ import { v4 as uuid } from 'uuid';
 function CartList() {
   const dispatch = useDispatch();
   const cartList = useSelector((state)=> state.cart.cart)
-  console.log(cartList)
   // const [totalPrice, setTotalPrice] =useState
   const pricePerOrderArr = cartList.map((order)=> order.totalPrice)
   const total = pricePerOrderArr.reduce((a, c)=> {
     return a + c
   },0)
   const [cartTotalPrice ,setCartTotalPrice ] = useState(total)
+
+  const currencyString = useSelector((state) => state.currencyFilter.currencyFilter)
+  const currency = JSON.parse(currencyString)
+  const currencyType = currency.currency
+  const currencyMultiplier = currency.multiplier
   
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(submitCart())
     const id = uuid();
-    dispatch(addOrder({orderId: id, orderList: cartList, totalPrice: cartTotalPrice}))
+    dispatch(addOrder({orderId: id, orderList: cartList, totalPrice: cartTotalPrice, currency: currencyType, currencyMultiplier: currency.multiplier}))
     toast.success('Your purchase has been successful. Thank you for your order!')
   }
 
@@ -37,6 +41,7 @@ function CartList() {
           {cartList.map((order) => {
             return <CartOrder key={order.id} order={order} cartTotalPrice={cartTotalPrice} setCartTotalPrice={setCartTotalPrice}  />;
           })}
+
           <div
             onClick={handleSubmit}
             onKeyDown={handleSubmit}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CartButton from './CartButton';
 import HomeButton from './HomeButton';
 import ConfirmButtonIcon from './ConfirmButtonIcon';
@@ -10,8 +10,16 @@ import { Outlet } from 'react-router-dom';
 import ConfirmedOrders from './ConfirmedOrders';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+import CurrencyFilterModal from './CurrencyFilterModal';
 
 function AppHeader() {
+  const [ currencyModal, setCurrencyModal ] = useState(false)
+
+  const handleCurrencyFilter = () => setCurrencyModal(true)
+
+  console.log(currencyModal)
+
+
   return (
     <div>
       <div className={styles.container}>
@@ -21,7 +29,11 @@ function AppHeader() {
         <div className={styles.cartIcons}>
 
           <div className={styles.cartIcon}>
-            <div className={styles.iconContainer}>
+            <div className={styles.iconContainer}
+            onClick={handleCurrencyFilter}
+            onKeyDown={handleCurrencyFilter}
+            tabIndex={0}
+            role="button">
               <FontAwesomeIcon icon={faGlobe} />
             </div>
           </div>
@@ -46,6 +58,7 @@ function AppHeader() {
         </div>
       </div>
       <Outlet/>
+      <CurrencyFilterModal CurrencyModal={currencyModal} setCurrencyModal={setCurrencyModal} />
     </div>
   )
 }

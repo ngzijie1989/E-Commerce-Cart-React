@@ -1,0 +1,18 @@
+.orderContainer{
+  text-align: left;
+  padding: 10px; 
+  border: 1px solid grey;
+  margin-bottom: 10px;
+  line-height: 0.5rem;
+  display: flex;
+  font-size: 0.8rem;
+  height: 150px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.itemsPurchased{
+  display: flex;
+  flex-direction: column;
+  line-height: 0;
+}

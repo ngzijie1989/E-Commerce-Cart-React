@@ -2,12 +2,21 @@ import React, { useState } from 'react'
 import styles from '../styles/InventoryItem.module.css'
 import Button from './Button'
 import AddtoCartModal from './AddtoCartModal'
+import { useSelector } from 'react-redux'
+import toast from 'react-hot-toast'
 
 function InventoryCard({ item }) {
   const [ modal, setModal ] = useState(false)
 
+  const CartList = useSelector((state) => state.cart.cart)
+  const findOrder = CartList.find((order)=> order.item === item.title)
+
   const handleClick = () => {
+    if (findOrder) {
+      toast.error("You have added this item before. To adjust quantity, go to the cart to adjust")
+    } else {
     setModal(true)
+    }
   }
 
   return (

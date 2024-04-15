@@ -10,9 +10,9 @@ function CartButton() {
   return (
     <div className={styles.iconContainer}>
       <FontAwesomeIcon icon={faCartShopping} />
-      <div className={styles.qty}>
+      {CartQty === 0 ? "" : ( <div className={styles.qty}>
         {CartQty}
-      </div>
+      </div>)}
     </div>
   )
 }

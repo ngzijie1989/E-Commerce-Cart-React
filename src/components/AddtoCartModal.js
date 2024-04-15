@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faMinus, faPlus, faLeftLong, faRightLong } from '@fortawesome/free-solid-svg-icons'
 import toast from 'react-hot-toast'
 import Button from './Button'
-import { addOrder } from '../slices/cartSlice'
+import { addCart } from '../slices/cartSlice'
 import { useDispatch } from 'react-redux'
 import { v4 as uuid } from 'uuid';
 import IndexButton from './IndexButton'
@@ -45,7 +45,7 @@ function AddtoCartModal({ modal, setModal, item }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = uuid();
-    dispatch(addOrder({item, Quantity, totalPrice, id }))
+    dispatch(addCart({item, Quantity, totalPrice, id }))
     setModal(false)
     // cause a shake in the cart
     toast.success(`A total of ${Quantity} of this item has been added to your cart`)

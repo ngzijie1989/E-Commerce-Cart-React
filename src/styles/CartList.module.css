@@ -8,6 +8,7 @@
   font-size: 0.8rem;
   height: 150px;
   justify-content: space-between;
+  position: relative;
 }
 
 .ordersContainer{
@@ -44,4 +45,39 @@
   align-items: center;
   margin-right: 20px;
   font-size: 1.5rem;
+}
+
+.addMinus{
+  display: inline;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.QuantityContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.QuantityTitle{
+  line-height: 0;
+}
+
+.stock{
+  color: grey;
+  font-size: 1rem;
+}
+
+.trashIcon{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.totalPrice{
+  line-height: 0;
+  font-weight: bold;
 }

@@ -1,11 +1,13 @@
 import React from 'react';
 import CartButton from './CartButton';
 import HomeButton from './HomeButton';
+import ConfirmButtonIcon from './ConfirmButtonIcon';
 import styles from '../styles/AppHeader.module.css';
 import { Link } from 'react-router-dom';
 import CartList from './CartList';
 import Inventory from './Inventory';
 import { Outlet } from 'react-router-dom';
+import ConfirmedOrders from './ConfirmedOrders';
 
 function AppHeader() {
   return (
@@ -24,6 +26,12 @@ function AppHeader() {
           <div className={styles.cartIcon}>
             <Link to="/cart" element={ < CartList/>}>
               <CartButton /> 
+            </Link>
+          </div>
+
+          <div className={styles.cartIcon}>
+            <Link to="/confirmed-purchases" element={ < ConfirmedOrders/>}>
+              <ConfirmButtonIcon /> 
             </Link>
           </div>
         </div>

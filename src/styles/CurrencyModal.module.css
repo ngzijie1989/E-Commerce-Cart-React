@@ -71,3 +71,10 @@
 	margin-top: 20px;
 	cursor: pointer;
 }
+
+.flagImage{
+	height: 1rem;
+	width: auto;
+	border-radius: 50%;
+	border: 0.3px solid rgb(142, 127, 127);
+}

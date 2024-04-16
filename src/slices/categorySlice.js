@@ -9,8 +9,6 @@ const getLocalStorageCategory = () => {
   }
 }
 
-console.log(typeof window.localStorage.getItem('category'));
-
 const initialValue = {
   categoryFilter: getLocalStorageCategory()
 }

@@ -17,9 +17,6 @@ function AppHeader() {
 
   const handleCurrencyFilter = () => setCurrencyModal(true)
 
-  console.log(currencyModal)
-
-
   return (
     <div>
       <div className={styles.container}>

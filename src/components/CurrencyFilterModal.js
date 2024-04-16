@@ -48,7 +48,7 @@ function CurrencyFilterModal({ setCurrencyModal, CurrencyModal }) {
                 tabIndex={0}
                 role="button"
                 data-value= {JSON.stringify({ currency: 'SGD', multiplier: 1 })}>
-              <button className={activeButton === 'SGD' ? styles.currencyFilterActive : styles.currencyFilter}>Singapore Dollar SGD</button>
+              <button className={activeButton === 'SGD' ? styles.currencyFilterActive : styles.currencyFilter}><img className={styles.flagImage} src="https://cdn-icons-png.flaticon.com/512/197/197496.png" alt ="SGD"/> Singapore Dollar SGD</button>
             </div>
 
             <div onClick={handleCurrency}
@@ -56,7 +56,7 @@ function CurrencyFilterModal({ setCurrencyModal, CurrencyModal }) {
                 tabIndex={0}
                 role="button"
                 data-value= {JSON.stringify({ currency: 'MYR', multiplier: 3.51 })}>
-              <button className={activeButton === 'MYR' ? styles.currencyFilterActive : styles.currencyFilter}>Malaysian Ringgit MYR</button>
+              <button className={activeButton === 'MYR' ? styles.currencyFilterActive : styles.currencyFilter}><img className={styles.flagImage} src="https://cdn-icons-png.flaticon.com/512/197/197581.png" alt ="SGD"/>  Malaysian Ringgit MYR</button>
             </div>
 
             <div onClick={handleCurrency}
@@ -64,7 +64,7 @@ function CurrencyFilterModal({ setCurrencyModal, CurrencyModal }) {
                 tabIndex={0}
                 role="button"
                 data-value= {JSON.stringify({ currency: 'AUD', multiplier: 1.134 })}>
-              <button className={activeButton === 'AUD' ? styles.currencyFilterActive : styles.currencyFilter}>Australian Dollar AUD</button>
+              <button className={activeButton === 'AUD' ? styles.currencyFilterActive : styles.currencyFilter}><img className={styles.flagImage} src="https://cdn-icons-png.flaticon.com/512/197/197507.png" alt ="SGD"/>  Australian Dollar AUD</button>
             </div>
 
             <div onClick={handleCurrencySubmit}

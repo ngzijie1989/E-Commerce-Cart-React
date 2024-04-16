@@ -49,7 +49,7 @@ function CartList() {
             role="button"
             className={styles.addMinus}
           >
-            <p className={styles.totalPrice}>Total Price: ${cartTotalPrice}</p>
+            <p className={styles.totalPrice}>Total Price: {currencyType} ${(cartTotalPrice*currencyMultiplier).toFixed(2)}</p>
             <SubmitButton>Submit Cart</SubmitButton>
           </div>
         </>

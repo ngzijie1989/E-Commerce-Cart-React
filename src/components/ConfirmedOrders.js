@@ -7,13 +7,17 @@ function ConfirmedOrders() {
   const orders = useSelector((state)=> state.orders.orders)
   
   return (
-    <div>
-      <h1>Your Purchases</h1>
-      <div className={styles.ordersContainer}>
-        {orders.map((order) => {
-          return <OrderCard key={order.id} order={order} />
-        })}
-      </div>
+    <div className={styles.ordersContainer}>
+      {orders.length === 0 ? "You do not have any purchases currently" : ( 
+      <>
+        <h1>Your Purchases</h1>
+        <div>
+          {orders.map((order) => {
+            return <OrderCard key={order.id} order={order} />;
+          })}
+        </div>
+      </>
+      )}
     </div>
   )
 }

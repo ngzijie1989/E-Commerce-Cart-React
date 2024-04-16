@@ -3,7 +3,6 @@ import OrderCardItem from './OrderCardItem'
 import styles from '../styles/OrderCard.module.css';
 
 function OrderCard({ order }) {
-  console.log(order.orderList)
   return (
     <div className={styles.orderContainer}>
       <div>
